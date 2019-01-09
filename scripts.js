@@ -24,6 +24,22 @@ scissorsButton.addEventListener("click",function(){
 })
 
 
+resetButton.addEventListener("click",function(){
+  // Resets the Score 0 and styles back to onload state
+  humanScore.innerHTML = 0;
+  compScore.innerHTML = 0;
+  result.innerHTML = "Ready to Play?";
+  gamesPlayed.innerHTML = "Games Played: " + 0;
+  compScoret = 0;
+  humanScoret = 0;
+  console.clear();
+  scoreBoard.classList.remove("score-board-tie");
+  scoreBoard.classList.remove("score-board-losing");
+  scoreBoard.classList.remove("score-board-winning");
+  scoreBoard.classList.add("score-board");
+
+})
+
 function game(userChoice){
   const compChoice = random();
   const winner = whoWins(userChoice,compChoice);
@@ -116,23 +132,7 @@ function game(userChoice){
   }
 }
 
-resetButton.addEventListener("click",function(){
-  // Resets the Score 0 and styles back to onload state
-  humanScore.innerHTML = 0;
-  compScore.innerHTML = 0;
-  result.innerHTML = "Ready to Play?";
-  gamesPlayed.innerHTML = "Games Played: " + 0;
-  compScoret = 0;
-  humanScoret = 0;
-  console.clear();
-  scoreBoard.classList.remove("score-board-tie");
-  scoreBoard.classList.remove("score-board-losing");
-  scoreBoard.classList.remove("score-board-winning");
-  scoreBoard.classList.add("score-board");
-
-})
-
-
+//Helper Functions
 function random(){
   //Randomly generates a computer choice, either rock, paper or scissors
   const options = ['rock','paper','scissors']
